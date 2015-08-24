@@ -1,5 +1,5 @@
-``jicbioimage``
-===============
+The ``jicbioimage`` Python package
+==================================
 
 .. image:: https://badge.fury.io/py/jicbioimage.svg
    :target: http://badge.fury.io/py/jicbioimage

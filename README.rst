@@ -1,5 +1,5 @@
-JIC Bio Image
-=============
+``jicbioimage``
+===============
 
 .. image:: https://badge.fury.io/py/jicbioimage.svg
    :target: http://badge.fury.io/py/jicbioimage

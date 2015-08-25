@@ -5,3 +5,5 @@ Table of contents
    :maxdepth: 2
 
    readme
+   installation_notes
+   api

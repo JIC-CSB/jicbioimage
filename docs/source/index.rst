@@ -8,4 +8,5 @@ Table of contents
    installation_notes
    quickstart
    working_with_images
+   working_with_microscopy_data
    api

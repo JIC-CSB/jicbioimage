@@ -6,4 +6,5 @@ Table of contents
 
    readme
    installation_notes
+   quickstart
    api

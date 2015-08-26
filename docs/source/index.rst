@@ -7,4 +7,5 @@ Table of contents
    readme
    installation_notes
    quickstart
+   working_with_images
    api

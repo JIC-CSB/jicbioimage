@@ -32,6 +32,7 @@ import shlex
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
 ]
 
@@ -368,3 +369,10 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
+
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {
+    'jicbioimagetransform':
+    ('http://jicbioimage.readthedocs.org/projects/jicbioimagetransform/en/latest/', None)
+    }

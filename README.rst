@@ -27,6 +27,7 @@ Features
 - Built in functionality for working with microscopy data
 - Automatic generation of audit trails
 - IPython integration
+- Cross-platform: Linux, Mac and Windows are all supported
 - Works with Python 2.7, 3.3 and 3.4
 
 Related packages

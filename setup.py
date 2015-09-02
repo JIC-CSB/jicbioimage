@@ -2,7 +2,7 @@ from setuptools import setup
 
 readme = open('README.rst').read()
 
-version = "0.4.1"
+version = "0.4.2"
 
 setup(name='jicbioimage',
       packages=['jicbioimage', ],

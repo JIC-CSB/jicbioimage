@@ -21,6 +21,13 @@ command below.
 
     brew install freeimage
 
+On Windows download and unzip the
+`FreeImage DLL <http://downloads.sourceforge.net/freeimage/FreeImage3170Win32Win64.zip>`_
+(in the example below this was done to the root of the ``C:`` drive).
+You will then need to add the relevant directory to your ``PATH``, for example on a
+64-bit system::
+
+    set PATH=C:\FreeImage\Dist\x64;%PATH%
 
 Install the Python package dependencies
 ---------------------------------------
@@ -60,8 +67,10 @@ Download the `bftools.zip
 file from the `openmicroscopy website
 <http://www.openmicroscopy.org/site/support/bio-formats5.0/users/comlinetools/>`_.
 
-Unzip the ``bftools.zip`` file into a memorable location for example a
-directory named ``tools``.
+You will then need to unzip the file and add it to your ``PATH``.
+
+On Linux and Mac based systems unzip the ``bftools.zip`` file into a
+memorable location, for example a directory named ``tools``.
 
 ::
 
@@ -77,6 +86,11 @@ Finally add the ``bftools`` directory to your ``PATH``.
     export PATH=$PATH:~/tools/bftools
 
 .. note:: You may want to add the line above to your ``.bashrc`` file.
+
+On Windows unzip the ``bftools.zip`` file to a memorable location, for
+example the ``C:\`` drive and set the ``PATH`` appropriately::
+
+    set PATH=C:\bftools;%PATH%
 
 Install the :mod:`jicbioimage` package
 --------------------------------------

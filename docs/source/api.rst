@@ -7,3 +7,4 @@ API documentation
 - :mod:`jicbioimage.core.transform`
 - :mod:`jicbioimage.core.util.array`
 - :mod:`jicbioimage.transform`
+- :mod:`jicbioimage.illustrate`

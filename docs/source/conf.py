@@ -375,4 +375,5 @@ epub_exclude_files = ['search.html']
 intersphinx_mapping = {
     'jicbioimagetransform': ('http://jicbioimage.readthedocs.org/projects/jicbioimagetransform/en/latest/', None),
     'jicbioimagecore': ('http://jicbioimage.readthedocs.org/projects/jicbioimagecore/en/latest/', None),
+    'jicbioimageillustrate': ('http://jicbioimage.readthedocs.org/projects/jicbioimageillustrate/en/latest/', None),
     }

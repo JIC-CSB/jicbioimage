@@ -45,6 +45,12 @@ Related packages
 - Documentation: http://jicbioimagetransform.readthedocs.org
 - GitHub: https://github.com/JIC-CSB/jicbioimage.transform
 
+``jicbioimage.segment``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+- Documentation: http://jicbioimagesegment.readthedocs.org
+- GitHub: https://github.com/JIC-CSB/jicbioimage.segment
+
 ``jicbioimage.illustrate``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 

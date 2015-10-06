@@ -376,4 +376,5 @@ intersphinx_mapping = {
     'jicbioimagetransform': ('http://jicbioimage.readthedocs.org/projects/jicbioimagetransform/en/latest/', None),
     'jicbioimagecore': ('http://jicbioimage.readthedocs.org/projects/jicbioimagecore/en/latest/', None),
     'jicbioimageillustrate': ('http://jicbioimage.readthedocs.org/projects/jicbioimageillustrate/en/latest/', None),
+    'jicbioimagesegment': ('http://jicbioimage.readthedocs.org/projects/jicbioimagesegment/en/latest/', None),
     }

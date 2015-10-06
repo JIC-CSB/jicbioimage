@@ -10,47 +10,83 @@ as a numpy array.
 .. code-block:: python
 
     >>> import skimage.data
-    >>> ar = skimage.data.coins()
+    >>> array = skimage.data.coins()
 
 We then create a :class:`jicbioimage.core.image.Image` instance from the array.
 
 .. code-block:: python
 
     >>> from jicbioimage.core.image import Image
-    >>> im = Image.from_array(ar)
+    >>> image = Image.from_array(array)
 
 If using IPython qtconsole/notebook the image can be viewed directly in
 the interpreter.
 
 .. code-block:: python
 
-    >>> im  # doctest: +SKIP
+    >>> image  # doctest: +SKIP
 
 .. image:: images/coins_raw.png
    :alt: Coins.
 
 
-We can now segment the image using a number of standard transformations.
+We can now threshold the image using a number of standard transformations.
 
 .. code-block:: python
 
     >>> from jicbioimage.transform import equalize_adaptive_clahe, smooth_gaussian, threshold_otsu
-    >>> im = equalize_adaptive_clahe(im)
-    >>> im = smooth_gaussian(im)
-    >>> im = threshold_otsu(im)
-    >>> im  # doctest: +SKIP
+    >>> image = equalize_adaptive_clahe(image)
+    >>> image = smooth_gaussian(image)
+    >>> image = threshold_otsu(image)
+    >>> image  # doctest: +SKIP
 
 .. image:: images/coins_thresholded.png
    :alt: Coins thresholded.
 
-When doing interactive image analysis it is often easy to forget what
-transforms an image has undergone. Let us find out what the history of our
-final image is.
+Let us segment the thresholded image into connected components.
 
 .. code-block:: python
 
-    >>> im.history  # doctest: +NORMALIZE_WHITESPACE
-    ['Created image from array',
-     'Applied equalize_adaptive_clahe transform',
-     'Applied smooth_gaussian transform',
-     'Applied threshold_otsu transform']
+    >>> from jicbioimage.segment import connected_components
+    >>> segmentation = connected_components(image, background=0)
+    >>> segmentation  # doctest: +SKIP
+
+.. image:: images/coins_segmented.png
+   :alt: Coins segmented.
+
+The :func:`jicbioimage.segment.connected_components` function returns an instance of
+the :class:`jicbioimage.core.image.SegmentedImage` class, which provides access to
+segmented regions of interest as :class:`jicbioimage.core.region.Region` instances.
+
+Finally, let us write a couple of functions to create an augmented reality image.
+
+.. code-block:: python
+
+    >>> import numpy as np
+    >>> from jicbioimage.illustrate import AnnotatedImage
+    >>> def text_position(region):
+    ...     "Return x, y coordinates of text position."
+    ...     ys, xs = region.index_arrays
+    ...     y = np.min(ys) - 5
+    ...     x = np.mean(xs, dtype=int)
+    ...     return x, y 
+    ...
+    >>> def augment_image(image, segmentation):
+    ...     "Return an augmented image."
+    ...     augmented = AnnotatedImage.from_grayscale(image)
+    ...     for i in segmentation.identifiers:
+    ...         region = segmentation.region_by_identifier(i)
+    ...         if region.area > 300 and region.area < 5000:
+    ...             augmented.mask_region(region.convex_hull.border)
+    ...             x, y = text_position(region.convex_hull)
+    ...             text = "{}px".format(region.convex_hull.area)
+    ...             augmented.text_at(text, x, y, center=True, antialias=False)
+    ...     return augmented
+    ...
+    >>> augmented = augment_image(array, segmentation)
+    >>> augmented = Image.from_array(augmented)
+    >>> augmented  # doctest: +SKIP
+
+.. image:: images/coins_augmented.png
+   :alt: Coins augmented.
+

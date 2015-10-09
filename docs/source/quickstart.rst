@@ -84,7 +84,6 @@ Finally, let us write a couple of functions to create an augmented reality image
     ...     return augmented
     ...
     >>> augmented = augment_image(array, segmentation)
-    >>> augmented = Image.from_array(augmented)
     >>> augmented  # doctest: +SKIP
 
 .. image:: images/coins_augmented.png

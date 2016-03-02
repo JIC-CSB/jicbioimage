@@ -63,12 +63,12 @@ Obtaining image collections
 ---------------------------
 
 One can obtain a basic :class:`jicbioimage.core.image.ImageCollection` by loading a
-multipage TIFF file into a :class:`jicbioimage.core.image.DataManager`.  Let us
-therefore create a :class:`jicbioimage.core.image.DataManager`.
+multipage TIFF file into a :class:`jicbioimage.core.io.DataManager`.  Let us
+therefore create a :class:`jicbioimage.core.io.DataManager`.
 
 .. code-block:: python
 
-    >>> from jicbioimage.core.image import DataManager
+    >>> from jicbioimage.core.io import DataManager
     >>> data_manager = DataManager()
 
 Into which we can load the sample ``multipage.tif`` file.
@@ -85,9 +85,9 @@ Into which we can load the sample ``multipage.tif`` file.
     >>> import os.path
     >>> import jicbioimage.core
     >>> JICIMAGLIB = os.path.dirname(jicbioimage.core.__file__)
-    >>> multipagetiff_fpath = os.path.join(JICIMAGLIB, "..", "tests", "data", multipagetiff_fpath)
+    >>> multipagetiff_fpath = os.path.join(JICIMAGLIB, "..", "..", "tests", "data", multipagetiff_fpath)
 
-The :func:`jicbioimage.core.image.DataManager.load` function returns the image
+The :func:`jicbioimage.core.io.DataManager.load` function returns the image
 collection.
 
 .. code-block:: python
@@ -123,7 +123,7 @@ file.
 ..
     This is just to make the doctest pass.
 
-    >>> zseries_fpath = os.path.join(JICIMAGLIB, "..", "tests", "data", zseries_fpath)
+    >>> zseries_fpath = os.path.join(JICIMAGLIB, "..", "..", "tests", "data", zseries_fpath)
 
 
 Let us now load a microscopy file instead.
@@ -195,7 +195,10 @@ Finally, one can also access the z-stack as a :class:`numpy.ndarray`.
 
 
 ..
-    Tidy up: remove the ./backend directory we created.
+    Tidy up: remove the ./backend directory we created and the png files
 
-    >>> import shutil
-    >>> shutil.rmtree(backend_directory)
+    >>> import shutil, glob
+    >>> shutil.rmtree(data_manager.backend.directory)
+    >>> png_files = glob.glob("*.png")
+    >>> for file in png_files:
+    ...     os.remove(file)

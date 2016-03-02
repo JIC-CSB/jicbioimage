@@ -65,7 +65,7 @@ When creating an array in this fashion it's history is empty.
     []
 
 To assign a creation event to the image history one can use the
-:func:`jicbioimage.core.image.Image.from_array` class method.
+:meth:`jicbioimage.core.image.Image.from_array` class method.
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ from the file ``images/rgb_squares.png``.
     >>> import os.path
     >>> fpath = os.path.join("source", fpath)
 
-This can be achieved using the :func:`jicbioimage.core.image.Image.from_file` class
+This can be achieved using the :meth:`jicbioimage.core.image.Image.from_file` class
 method.
 
 .. code-block:: python

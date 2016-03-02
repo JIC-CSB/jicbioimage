@@ -11,7 +11,7 @@ processing.
 
 To make it painless to set-up such an audit trail :mod:`jicbioimage` provides
 the function decorator
-:func:`jicbioimage.core.tranform.transformation`. When applied to a
+:func:`jicbioimage.core.transform.transformation`. When applied to a
 transformation function the decorator adds both "autowriting" of the tranformed
 image as well as a log in the history of the image.
 
@@ -20,7 +20,7 @@ Pre-built transformations
 
 The :mod:`jicbioimage.transform` package constains a number of standard
 image transformations that have had the
-:func:`jicbioimage.core.tranform.transformation` function decorator applied to
+:func:`jicbioimage.core.transform.transformation` function decorator applied to
 them.
 
 For more information see
@@ -31,7 +31,7 @@ Creating a custom transform
 ---------------------------
 
 Suppose that we wanted to create a transformation to invert our image. We can
-achieve this by importing the :func:`jicimagelib.transform.transformation`
+achieve this by importing the :func:`jicbioimage.core.transform.transformation`
 decorator.
 
 .. code-block:: python

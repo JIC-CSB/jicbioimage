@@ -38,7 +38,9 @@ below.
 - :class:`jicbioimage.core.image.Image`
 - :class:`jicbioimage.core.image.ProxyImage`
 - :class:`jicbioimage.core.image.MicroscopyImage`
-- :class:`jicbioimage.core.image.SegmentedImage`
+- :class:`jicbioimage.segment.SegmentedImage`
+- :class:`jicbioimage.illustrate.Canvas`
+- :class:`jicbioimage.illustrate.AnnotatedImage`
 
 Furthermore the collection classes listed below will display summary
 information and thumbnails of all the images in the collection in IPython

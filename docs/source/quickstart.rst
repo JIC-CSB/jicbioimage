@@ -55,8 +55,8 @@ Let us segment the thresholded image into connected components.
    :alt: Coins segmented.
 
 The :func:`jicbioimage.segment.connected_components` function returns an instance of
-the :class:`jicbioimage.core.image.SegmentedImage` class, which provides access to
-segmented regions of interest as :class:`jicbioimage.core.region.Region` instances.
+the :class:`jicbioimage.segment.SegmentedImage` class, which provides access to
+segmented regions of interest as :class:`jicbioimage.segment.Region` instances.
 
 Finally, let us write a couple of functions to create an augmented reality image.
 

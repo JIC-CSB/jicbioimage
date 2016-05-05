@@ -373,8 +373,8 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
-    'jicbioimagetransform': ('http://jicbioimage.readthedocs.org/projects/jicbioimagetransform/en/latest/', None),
-    'jicbioimagecore': ('http://jicbioimage.readthedocs.org/projects/jicbioimagecore/en/latest/', None),
-    'jicbioimageillustrate': ('http://jicbioimage.readthedocs.org/projects/jicbioimageillustrate/en/latest/', None),
-    'jicbioimagesegment': ('http://jicbioimage.readthedocs.org/projects/jicbioimagesegment/en/latest/', None),
+    'jicbioimagetransform': ('http://jicbioimage.readthedocs.io/projects/jicbioimagetransform/en/latest/', None),
+    'jicbioimagecore': ('http://jicbioimage.readthedocs.io/projects/jicbioimagecore/en/latest/', None),
+    'jicbioimageillustrate': ('http://jicbioimage.readthedocs.io/projects/jicbioimageillustrate/en/latest/', None),
+    'jicbioimagesegment': ('http://jicbioimage.readthedocs.io/projects/jicbioimagesegment/en/latest/', None),
     }

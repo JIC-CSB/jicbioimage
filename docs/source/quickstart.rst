@@ -69,7 +69,7 @@ Finally, let us write a couple of functions to create an augmented reality image
     ...     ys, xs = region.index_arrays
     ...     y = np.min(ys) - 5
     ...     x = np.mean(xs, dtype=int)
-    ...     return x, y 
+    ...     return (y, x) 
     ...
     >>> def augment_image(image, segmentation):
     ...     "Return an augmented image."
@@ -78,9 +78,9 @@ Finally, let us write a couple of functions to create an augmented reality image
     ...         region = segmentation.region_by_identifier(i)
     ...         if region.area > 300 and region.area < 5000:
     ...             augmented.mask_region(region.convex_hull.border)
-    ...             x, y = text_position(region.convex_hull)
+    ...             pos = text_position(region.convex_hull)
     ...             text = "{}px".format(region.convex_hull.area)
-    ...             augmented.text_at(text, x, y, center=True, antialias=False)
+    ...             augmented.text_at(text, pos, center=True, antialias=False)
     ...     return augmented
     ...
     >>> augmented = augment_image(array, segmentation)

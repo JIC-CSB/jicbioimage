@@ -44,8 +44,8 @@ These are used for managing access to the images stored within them.
 To this end the :class:`jicbioimage.core.image.ImageCollection` class has got
 the functions below:
 
-- :func:`jicbioimage.core.image.ImageCollection.image`
-- :func:`jicbioimage.core.image.ImageCollection.proxy_image`
+- :meth:`jicbioimage.core.image.ImageCollection.image`
+- :meth:`jicbioimage.core.image.ImageCollection.proxy_image`
 
 
 The :class:`jicbioimage.core.image.MicroscopyCollection` class is more advanced
@@ -53,10 +53,10 @@ in that individual images can be accessed by specifying the series, channel,
 zslice and timepoint of interest. For more information have a look at the API
 documentation of:
 
-- :func:`jicbioimage.core.image.MicroscopyCollection.image`
-- :func:`jicbioimage.core.image.MicroscopyCollection.proxy_image`
-- :func:`jicbioimage.core.image.MicroscopyCollection.zstack_proxy_iterator`
-- :func:`jicbioimage.core.image.MicroscopyCollection.zstack_array`
+- :meth:`jicbioimage.core.image.MicroscopyCollection.image`
+- :meth:`jicbioimage.core.image.MicroscopyCollection.proxy_image`
+- :meth:`jicbioimage.core.image.MicroscopyCollection.zstack_proxy_iterator`
+- :meth:`jicbioimage.core.image.MicroscopyCollection.zstack_array`
 
 
 Obtaining image collections
@@ -87,7 +87,7 @@ Into which we can load the sample ``multipage.tif`` file.
     >>> JICIMAGLIB = os.path.dirname(jicbioimage.core.__file__)
     >>> multipagetiff_fpath = os.path.join(JICIMAGLIB, "..", "..", "tests", "data", multipagetiff_fpath)
 
-The :func:`jicbioimage.core.io.DataManager.load` function returns the image
+The :meth:`jicbioimage.core.io.DataManager.load` function returns the image
 collection.
 
 .. code-block:: python
@@ -179,7 +179,7 @@ snippet below.
     <MicroscopyImage(s=0, c=0, z=4, t=0) object at ...>
 
 
-Finally, one can also access the z-stack as a :class:`numpy.ndarray`.
+One can also access the z-stack as a :class:`numpy.ndarray`.
 
 .. code-block:: python
 
@@ -192,6 +192,21 @@ Finally, one can also access the z-stack as a :class:`numpy.ndarray`.
             [96, 96, 96, 96, 96],
             [96, 96, 96, 96, 96]]], dtype=uint8)
     
+
+However, it is often more convenient to access the z-stack as a
+:class:`jicbioimage.core.image.Image3D` using the
+:meth:`jicbioimage.core.image.MicroscopyCollection.zstack` method.
+
+.. code-block:: python
+
+    >>> microscopy_collection.zstack()  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
+    Image3D([[[ 0,  0,  0,  0,  0],
+              [ 0,  0,  0,  0,  0],
+              [ 0,  0,  0,  0,  0],
+              ...
+              [96, 96, 96, 96, 96],
+              [96, 96, 96, 96, 96],
+              [96, 96, 96, 96, 96]]], dtype=uint8)
 
 
 ..

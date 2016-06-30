@@ -61,7 +61,7 @@ When creating an array in this fashion it's history is empty.
 
 .. code-block:: python
 
-    >>> np.zeros((50,50), dtype=np.uint8).view(Image).history
+    >>> np.zeros((50, 50), dtype=np.uint8).view(Image).history
     []
 
 To assign a creation event to the image history one can use the
@@ -69,10 +69,10 @@ To assign a creation event to the image history one can use the
 
 .. code-block:: python
 
-    >>> ar = np.zeros((50,50), dtype=np.uint8)
+    >>> ar = np.zeros((50, 50), dtype=np.uint8)
     >>> im = Image.from_array(ar)
     >>> im.history
-    ['Created image from array']
+    ['Created Image from array']
 
 Creating images from file
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,7 +101,7 @@ method.
 Accessing png representations of an image
 -----------------------------------------
 
-The :func:`jicbioimage.core.image.Image.png` function can be used to access
+The :meth:`jicbioimage.core.image.Image.png` function can be used to access
 the image as a PNG binary string. This function is used internally to implement
 the IPython integration, which allows images to be viewed directly in IPython
 qtconsole/notebook.
@@ -112,3 +112,33 @@ qtconsole/notebook.
 
 .. image:: images/rgb_squares.png
    :alt: RGB squares.
+
+Working with stacks of images
+-----------------------------
+
+Many bioimages contain stacks of 2D images representing a 3D structure.  The
+:class:`jicbioimage.core.image.Image3D` class can be used to work with this
+type of data.
+
+The :class:`jicbioimage.core.image.Image3D` is a subclass of
+:class:`numpy.ndarray`. To create an instance of a
+:class:`jicbioimage.core.image.Image3D` from a numpy array and assign a
+creation event to the history of the 3D image one can use the
+:class:`jicbioimage.core.image.Image3D.from_array` method.
+
+To access such a stack from a
+:class:`jicbioimage.core.image.MicroscopyCollection` one can use the
+:meth:`jicbioimage.core.image.MicroscopyCollection.zstack` method.
+
+.. code-block:: python
+
+    >>> from jicbioimage.core.image import Image3D
+    >>> ar = np.zeros((50, 50, 50), dtype=np.uint8)
+    >>> im3d = Image3D.from_array(ar)
+    >>> im3d.history
+    ['Created Image3D from array']
+
+It is possible to write and read an instance of
+:class:`jicbioimage.core.image.Image3D` as a series of 2D images to and from a
+directory using the :meth:`jicbioimage.core.image.Image3D.to_directory` method
+and :meth:`jicbioimage.core.image.Image3D.from_directory` class method.

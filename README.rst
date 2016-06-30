@@ -16,7 +16,7 @@ exploratory work becomes recorded and reproducible.  Furthermore, it makes it
 easier to convert the exploratory work into (semi) automated analysis work
 flows.
 
-- Documentation: http://jicbioimage.readthedocs.org
+- Documentation: http://jicbioimage.readthedocs.io
 - GitHub: https://github.com/JIC-CSB/jicbioimage
 - PyPI: https://pypi.python.org/pypi/jicbioimage
 - Free software: MIT License
@@ -36,23 +36,23 @@ Related packages
 ``jicbioimage.core``
 ^^^^^^^^^^^^^^^^^^^^
 
-- Documentation: http://jicbioimagecore.readthedocs.org
+- Documentation: http://jicbioimagecore.readthedocs.io
 - GitHub: https://github.com/JIC-CSB/jicbioimage.core
 
 ``jicbioimage.transform``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Documentation: http://jicbioimagetransform.readthedocs.org
+- Documentation: http://jicbioimagetransform.readthedocs.io
 - GitHub: https://github.com/JIC-CSB/jicbioimage.transform
 
 ``jicbioimage.segment``
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-- Documentation: http://jicbioimagesegment.readthedocs.org
+- Documentation: http://jicbioimagesegment.readthedocs.io
 - GitHub: https://github.com/JIC-CSB/jicbioimage.segment
 
 ``jicbioimage.illustrate``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Documentation: http://jicbioimageillustrate.readthedocs.org
+- Documentation: http://jicbioimageillustrate.readthedocs.io
 - GitHub: https://github.com/JIC-CSB/jicbioimage.illustrate

@@ -60,7 +60,7 @@ author = u'Tjelvar Olsson and Matthew Hartley'
 # built documents.
 #
 # The short X.Y version.
-version = '0.10.1'
+version = '0.12.0'
 # The full version, including alpha/beta/rc tags.
 release = version
 

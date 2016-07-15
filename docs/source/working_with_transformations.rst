@@ -63,10 +63,8 @@ We can now apply the transformation to our image.
 
 .. code-block:: python
 
-    >>> invert(im)
-    Image([[255, 255, 255],
-           [255, 255, 255],
-           [255, 255, 255]], dtype=uint8)
+    >>> invert(im)  # doctest: +ELLIPSIS
+    <Image object at 0x..., dtype=uint8>
 
 
 Specifying ``dtype`` contracts

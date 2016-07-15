@@ -28,14 +28,8 @@ functionality inherited from :class:`numpy.ndarray`.
 .. code-block:: python
 
     >>> from jicbioimage.core.image import Image
-    >>> Image((50,50))  # doctest: +SKIP
-    Image([[  0,   0,   0, ..., 132,   0,   0],
-           [ 90,  57,   0, ..., 101,  62,   0],
-           [ 60, 100,  32, ...,   0, 100,  35],
-           ...,
-           [  0,   0, 208, ...,   0,   0,   0],
-           [128,  68,  30, ...,   0, 128, 228],
-           [ 34,   1,   1, ...,  69,  30,   2]], dtype=uint8)
+    >>> Image((50,50))  # doctest: +ELLIPSIS
+    <Image object at 0x..., dtype=uint8>
 
 .. warning:: When creating an image in this fashion it will be filled with
              the noise of whatever was present in that piece of computer memory
@@ -48,21 +42,15 @@ using :func:`numpy.zeros` or :func:`numpy.ones` and then cast it to the
 .. code-block:: python
 
     >>> import numpy as np
-    >>> np.zeros((50,50), dtype=np.uint8).view(Image)
-    Image([[0, 0, 0, ..., 0, 0, 0],
-           [0, 0, 0, ..., 0, 0, 0],
-           [0, 0, 0, ..., 0, 0, 0],
-           ..., 
-           [0, 0, 0, ..., 0, 0, 0],
-           [0, 0, 0, ..., 0, 0, 0],
-           [0, 0, 0, ..., 0, 0, 0]], dtype=uint8)
+    >>> np.zeros((50,50), dtype=np.uint8).view(Image)  # doctest: +ELLIPSIS
+    <Image object at 0x..., dtype=uint8>
 
-When creating an array in this fashion it's history is empty.
+When creating an array in this fashion it's history creation attribute is empty.
 
 .. code-block:: python
 
-    >>> np.zeros((50, 50), dtype=np.uint8).view(Image).history
-    []
+    >>> print(np.zeros((50, 50), dtype=np.uint8).view(Image).history.creation)
+    None
 
 To assign a creation event to the image history one can use the
 :meth:`jicbioimage.core.image.Image.from_array` class method.
@@ -71,8 +59,8 @@ To assign a creation event to the image history one can use the
 
     >>> ar = np.zeros((50, 50), dtype=np.uint8)
     >>> im = Image.from_array(ar)
-    >>> im.history
-    ['Created Image from array']
+    >>> im.history.creation
+    'Created Image from array'
 
 Creating images from file
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,8 +123,8 @@ To access such a stack from a
     >>> from jicbioimage.core.image import Image3D
     >>> ar = np.zeros((50, 50, 50), dtype=np.uint8)
     >>> im3d = Image3D.from_array(ar)
-    >>> im3d.history
-    ['Created Image3D from array']
+    >>> im3d.history.creation
+    'Created Image3D from array'
 
 It is possible to write and read an instance of
 :class:`jicbioimage.core.image.Image3D` as a series of 2D images to and from a

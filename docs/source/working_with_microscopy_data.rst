@@ -155,14 +155,8 @@ could use the code snippet below.
 
 .. code-block:: python
 
-    >>> microscopy_collection.image(z=2)  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
-    Image([[ 0,  0,  0, ...,  0,  0,  0],
-           [ 1,  1,  1, ...,  1,  1,  1],
-           [ 2,  2,  2, ...,  2,  2,  2],
-           ..., 
-           [95, 95, 95, ..., 95, 95, 95],
-           [95, 95, 95, ..., 95, 95, 95],
-           [96, 96, 96, ..., 96, 96, 96]], dtype=uint8)
+    >>> microscopy_collection.image(z=2)  # doctest: +ELLIPSIS
+    <Image object at 0x..., dtype=uint8>
 
 Similarly one could loop over all the slices in the z-stack using the code
 snippet below.
@@ -199,14 +193,8 @@ However, it is often more convenient to access the z-stack as a
 
 .. code-block:: python
 
-    >>> microscopy_collection.zstack()  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
-    Image3D([[[ 0,  0,  0,  0,  0],
-              [ 0,  0,  0,  0,  0],
-              [ 0,  0,  0,  0,  0],
-              ...
-              [96, 96, 96, 96, 96],
-              [96, 96, 96, 96, 96],
-              [96, 96, 96, 96, 96]]], dtype=uint8)
+    >>> microscopy_collection.zstack()  # doctest: +ELLIPSIS
+    <Image3D object at 0x..., dtype=uint8>
 
 
 ..

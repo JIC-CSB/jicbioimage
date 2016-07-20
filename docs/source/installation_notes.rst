@@ -51,7 +51,7 @@ images in the IPython notebook.
 
 ::
 
-    pip install "ipython[notebook]"
+    pip install jupyter
 
 
 
@@ -99,6 +99,7 @@ Finally install the :mod:`jicbioimage` package using ``pip``.
 
 ::
 
-    pip install jicbioimage
     pip install jicbioimage.core
     pip install jicbioimage.transform
+    pip install jicbioimage.segment
+    pip install jicbioimage.illustrate

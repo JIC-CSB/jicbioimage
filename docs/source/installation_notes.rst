@@ -63,9 +63,13 @@ command line tools. However, they are needed if you want to be able to work
 with microscopy files.
 
 Download the `bftools.zip
-<http://downloads.openmicroscopy.org/latest/bio-formats5.0/artifacts/bftools.zip>`_
+<http://downloads.openmicroscopy.org/latest/bio-formats/artifacts/bftools.zip>`_
 file from the `openmicroscopy website
-<http://www.openmicroscopy.org/site/support/bio-formats5.0/users/comlinetools/>`_.
+<https://downloads.openmicroscopy.org/latest/bio-formats/>`_.
+
+.. warning:: :mod:`jicbioimage.core` version 0.14 and greater require
+             BioFormats to be version 5.2.1 or greater to make use of the
+             ``-nolookup`` option.
 
 You will then need to unzip the file and add it to your ``PATH``.
 

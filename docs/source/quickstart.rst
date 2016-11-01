@@ -30,13 +30,11 @@ the interpreter.
    :alt: Coins.
 
 
-We can now threshold the image using a number of standard transformations.
+We can now threshold the image, for example using Otsu's method.
 
 .. code-block:: python
 
-    >>> from jicbioimage.transform import equalize_adaptive_clahe, smooth_gaussian, threshold_otsu
-    >>> image = equalize_adaptive_clahe(image)
-    >>> image = smooth_gaussian(image)
+    >>> from jicbioimage.transform import threshold_otsu
     >>> image = threshold_otsu(image)
     >>> image  # doctest: +SKIP
 
@@ -89,3 +87,8 @@ Finally, let us write a couple of functions to create an augmented reality image
 .. image:: images/coins_augmented.png
    :alt: Coins augmented.
 
+..
+    # Save the image for the documentation.
+    >>> with open("coins_augmented.png", "wb") as fh:
+    ...    fh.write(augmented.png())
+    ...

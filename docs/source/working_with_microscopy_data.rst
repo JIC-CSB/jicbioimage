@@ -113,7 +113,7 @@ Accessing data from microscopy collections
 
 Suppose instead that we had a microscopy file. Here we will use the 
 `z-series.ome.tif
-<http://www.openmicroscopy.org/Schemas/Samples/2015-01/bioformats-artificial/z-series.ome.tif.zip>`_
+<http://downloads.openmicroscopy.org/images/OME-TIFF/2015-01/bioformats-artificial/z-series.ome.tif>`_
 file.
 
 .. code-block:: python
